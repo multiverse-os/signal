@@ -16,7 +16,7 @@ newer functionality added to the underlying library.
 There is a variety of ways to interact with the library, and a different ways to
 initialize the functions to run in response to OS signals:
 
-```
+```go
 package main
 
 import (
