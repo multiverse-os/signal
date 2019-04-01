@@ -27,7 +27,7 @@ import (
 
 func main() {
   // Shutdown is a group of signals that include: SIGINT, SIGTERM, SIGQUIT,
-  SIGHUP, and SIGKILL
+  // SIGHUP, and SIGKILL
   optionOne := signals.Handler()
   optionOne.OnShutdown(func(s os.Signal){
     fmt.Println("received a signal:", s)
