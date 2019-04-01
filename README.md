@@ -65,6 +65,3 @@ source code is written to be human-readable as possible without being noisy.
 Volunteers are wanted to help improve the quality and competeness Any feature
 requests, push requets, documentation fixes are welcome, please just create a
 pull request and a code review will be initiated. 
-
-
-
