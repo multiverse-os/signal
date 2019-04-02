@@ -1,6 +1,7 @@
 package signals
 
 import (
+	"os"
 	"syscall"
 )
 
