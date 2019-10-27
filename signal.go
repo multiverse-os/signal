@@ -1,9 +1,16 @@
-package signals
+package signal
 
 import (
 	"os"
 	"syscall"
 )
+
+// User Defined Signal Handlers
+// A process can replace the default signal handler for almost all signals (but not SIGKILL) by its user’s own handler function.
+// A signal handler function can have any name, but must have return type void and have one int parameter.
+// Example: you might choose the name sigchld_handler for a signal handler for the SIGCHLD signal (termination of a child process). Then the declaration would be:
+//
+//   void sigchld_handler(int sig);
 
 // Signals
 ///////////////////////////////////////////////////////////////////////////////
@@ -14,7 +21,14 @@ import (
 // SIGQUIT: quit (core dump expected)
 // SIGABRT: abort
 // SIGTERM: termination
-var ShutdownSignals = []os.Signal{
+
+type SignalType int
+
+const (
+	ShutdownType SignalType = iota
+)
+
+var ShutdownSignal = []os.Signal{
 	syscall.SIGINT,
 	syscall.SIGTERM,
 	syscall.SIGQUIT,
@@ -36,4 +50,6 @@ var (
 	SIGQUIT = Quit
 	SIGHUP  = Hangup
 	SIGKILL = Kill
+	//Ign: Ignore the signal; i.e., do nothing, just return
+	//Stop: block the process
 )
