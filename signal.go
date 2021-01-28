@@ -53,3 +53,20 @@ var (
 	//Ign: Ignore the signal; i.e., do nothing, just return
 	//Stop: block the process
 )
+
+// Signals
+///////////////////////////////////////////////////////////////////////////////
+// REF: runtime/sigtab_linux_generic.go (Go source code)
+// These are what is defined below as the shutdown or exit signal group
+// SIGHUP: terminal line hangup
+// SIGINT: interrupt
+// SIGQUIT: quit (core dump expected)
+// SIGABRT: abort
+// SIGTERM: termination
+var ShutdownSignals = []os.Signal{
+	syscall.SIGINT,
+	syscall.SIGTERM,
+	syscall.SIGQUIT,
+	syscall.SIGHUP,
+	syscall.SIGKILL,
+}

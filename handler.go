@@ -6,15 +6,6 @@ import (
 	"sync"
 )
 
-type Action func(os.Signal)
-
-type Signal struct {
-	Type    SignalType
-	Pointer uintptr
-	Ignore  bool
-	Hook    Action // Is it not [] because we allow chaining
-}
-
 type Handler struct {
 	hooks     map[os.Signal][]func(os.Signal)
 	ignored   []os.Signal
